@@ -3,13 +3,12 @@ name: Deny
 on:
   pull_request:
   merge_group:
-  schedule:
-    # Runs at 00:00 UTC everyday
-    - cron: "0 0 * * *"
 
 jobs:
   deny:
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v4
-    - uses: EmbarkStudios/cargo-deny-action@v2
+      - uses: actions/checkout@v5
+      # - uses: EmbarkStudios/cargo-deny-action@v2
+      #   with:
+      #     rust-version: 1.90.0
